@@ -68,11 +68,11 @@ import random
 keyboard = InlineKeyboardMarkup(
     [
         [
-            InlineKeyboardButton(text="📞 Contact", url="https://www.google.com/"),
-            InlineKeyboardButton(text="🛠️ Help", url="https://www.google.com/"),
+            InlineKeyboardButton(text="📞 Contact", url="www.google.com"),
+            InlineKeyboardButton(text="🛠️ Help", url="www.google.com"),
         ],
         [
-            InlineKeyboardButton(text="🪄 Updates Channel", url="https://www.google.com/"),
+            InlineKeyboardButton(text="🪄 Updates Channel", url="www.google.com"),
         ],
     ]
 )
@@ -81,11 +81,11 @@ keyboard = InlineKeyboardMarkup(
 Busy = InlineKeyboardMarkup(
     [
         [
-            InlineKeyboardButton(text="📞 start", url="/start"),
-            InlineKeyboardButton(text="🛠️ Help", url="/guide"),
+            InlineKeyboardButton(text="📞 Contact", url="www.google.com"),
+            InlineKeyboardButton(text="🛠️ Help", url="www.google.com"),
         ],
         [
-            InlineKeyboardButton(text="🪄 Updates Channel", url="https://www.google.com/"),
+            InlineKeyboardButton(text="🪄 Updates Channel", url="www.google.com"),
         ],
     ]
 )
@@ -115,7 +115,7 @@ async def start_command(bot: Client, message: Message):
         "➠ **Can Extract Videos & PDFs From Your Text File and Upload to Telegram!**\n"
         "➠ **For Guide Use Command /guide 📖**\n\n"
         "➠ **Use /rose Command to Download From TXT File** 📄\n\n"
-        "➠ **𝐌𝐚𝐝𝐞 𝐁𝐲:** @blazee🩷"
+        "➠ **𝐌𝐚𝐝𝐞 𝐁𝐲:** Blazee🩷"
     )
 
     # Send the image with caption and buttons
@@ -171,14 +171,14 @@ async def cookies_handler(client: Client, m: Message):
         await m.reply_text(f"⚠️ An error occurred: {str(e)}")
 
 
-# # File paths
+# File paths
 # SUBSCRIPTION_FILE = "subscription_data.txt"
 CHANNELS_FILE = "channels_data.json"
 
 # # Admin ID
-# YOUR_ADMIN_ID = 933994171
+# YOUR_ADMIN_ID = 5548106944
 
-# # Function to read subscription data
+# Function to read subscription data
 # def read_subscription_data():
 #     if not os.path.exists(SUBSCRIPTION_FILE):
 #         return []
@@ -216,19 +216,18 @@ def read_channels_data():
 #         await func(client, message)
 #     return wrapper
 
-# # How to use:-
+# How to use:-
 @bot.on_message(filters.command("guide"))
 async def guide_handler(client: Client, message: Message):
     guide_text = (
-#         "🔑 **How to get started with Premium**:\n\n"
-#         "1. **First of all**, contact the owner and buy a premium plan. 💰\n"
-#         "2. **If you are a premium user**, you can check your plan by using `/myplan`. 🔍\n\n"
-#         "📖 **Usage**:\n\n"
-#         "1. `/add_channel -100{channel_id}` - Add a channel to the bot.\n"
-#         "2. `/remove_channel -100{channel_id}` - Remove a channel from the bot.\n"
-        "1. `/start` file command - Process the start bot.\n"
-        "1. `/rose` file command - Process the .txt file.\n"
-        "2. `/stop` - Stop the task running in the bot. 🚫\n\n"
+        "🔑 **How to get started with Premium**:\n\n"
+        "1. **First of all**, contact the owner and buy a premium plan. 💰\n"
+        "2. **If you are a premium user**, you can check your plan by using `/myplan`. 🔍\n\n"
+        "📖 **Usage**:\n\n"
+        "1. `/add_channel -100{channel_id}` - Add a channel to the bot.\n"
+        "2. `remove_channel -100{channel_id}` - Remove a channel from the bot.\n"
+        "3. `/rose` file command - Process the .txt file.\n"
+        "4. `/stop` - Stop the task running in the bot. 🚫\n\n"
         "If you have any questions, feel free to ask! 💬"
     )
     await message.reply_text(guide_text)
@@ -260,13 +259,13 @@ async def guide_handler(client: Client, message: Message):
 #     except ValueError:
 #         await message.reply_text("Invalid command format. Use: /removeuser <user_id>")
 
-# YOUR_ADMIN_ID = 933994171
+# YOUR_ADMIN_ID = 5548106944
 
-# # Helper function to check admin privilege
+# Helper function to check admin privilege
 # def is_admin(user_id):
 #     return user_id == YOUR_ADMIN_ID
 
-# # Command to show all users (Admin only)
+# Command to show all users (Admin only)
 # @bot.on_message(filters.command("users") & filters.private)
 # async def show_users(client, message: Message):
 #     user_id = message.from_user.id
@@ -350,7 +349,7 @@ async def guide_handler(client: Client, message: Message):
 #     except ValueError:
 #         await message.reply_text("Invalid command format. Use: /remove_channels <channel_id>")
 
-# YOUR_ADMIN_ID = 933994171
+# YOUR_ADMIN_ID = 5548106944
 
 # # Helper function to check admin privilege
 # def is_admin(user_id):
@@ -386,37 +385,37 @@ async def guide_handler(client: Client, message: Message):
 #     await message.reply_text("✅ **All channels have been removed successfully.**")
 
 
-# # 6. /stop
+# 6. /stop
 @bot.on_message(filters.command("stop"))
 async def stop_handler(client, message: Message):
     if message.chat.type == "private":
         user_id = str(message.from_user.id)
-#         subscription_data = read_subscription_data()
-#         if not any(user[0] == user_id for user in subscription_data):
-#             await message.reply_text("😔 You are not a premium user. Please subscribe to get access! 🔒")
-#             return
-#     else:
-#         channels = read_channels_data()
-#         if str(message.chat.id) not in channels:
-#             await message.reply_text("🚫 You are not a premium user. Subscribe to unlock all features! ✨")
-#             return
+        # subscription_data = read_subscription_data()
+        # if not any(user[0] == user_id for user in subscription_data):
+        #     await message.reply_text("😔 You are not a premium user. Please subscribe to get access! 🔒")
+            # return
+    # else:
+        channels = read_channels_data()
+        # if str(message.chat.id) not in channels:
+        #     await message.reply_text("🚫 You are not a premium user. Subscribe to unlock all features! ✨")
+            # return
 
     await message.reply_text("♦️ 𝐒𝐭𝐨𝐩𝐩𝐞𝐝 ♦️" , True)
     os.execl(sys.executable, sys.executable, *sys.argv)
 
-@bot.on_message(filters.command("rose"))
-async def rose_handler(client: Client, m: Message):
+@bot.on_message(filters.command("moni"))
+async def moni_handler(client: Client, m: Message):
     if m.chat.type == "private":
         user_id = str(m.from_user.id)
-        # subscription_data = read_subscription_data()
-    #     if not any(user[0] == user_id for user in subscription_data):
-    #         await m.reply_text("❌ You are not a premium user. Please upgrade your subscription! 💎")
-    #         return
+        subscription_data = read_subscription_data()
+        if not any(user[0] == user_id for user in subscription_data):
+            await m.reply_text("❌ You are not a premium user. Please upgrade your subscription! 💎")
+            return
     else:
         channels = read_channels_data()
-        # if str(m.chat.id) not in channels:
-        #     await m.reply_text("❗ You are not a premium user. Subscribe now for exclusive access! 🚀")
-        #     return
+        if str(m.chat.id) not in channels:
+            await m.reply_text("❗ You are not a premium user. Subscribe now for exclusive access! 🚀")
+            return
             
     editable = await m.reply_text('𝐓𝐨 𝐃𝐨𝐰𝐧𝐥𝐨𝐚𝐝 𝐀 𝐓𝐱𝐭 𝐅𝐢𝐥𝐞 𝐒𝐞𝐧𝐝 𝐇𝐞𝐫𝐞 ⏍')
 
@@ -510,7 +509,7 @@ async def rose_handler(client: Client, m: Message):
     # Default credit message
     credit = "️ ⁪⁬⁮⁮⁮"
     if raw_text3 == 'de':
-        CR = '@blazee🩷'
+        CR = '@SanjayKagra86🩷'
     elif raw_text3:
         CR = raw_text3
     else:
@@ -618,8 +617,8 @@ async def rose_handler(client: Client, m: Message):
                      
             try:  
                 
-                cc = f'**🎥 VIDEO ID: {str(count).zfill(3)}.\n\n📄 Title: {name1} {res} .mkv\n\n<pre><code>🔖 Batch Name: {b_name}</code></pre>\n\n📥 Extracted By : {CR}**'
-                cc1 = f'**📁 FILE ID: {str(count).zfill(3)}.\n\n📄 Title: {name1} .pdf \n\n<pre><code>🔖 Batch Name: {b_name}</code></pre>\n\n📥 Extracted By : {CR}**'
+                cc = f'**🎥 VIDEO ID: {str(count).zfill(3)}.\n\n📄 Title: {name1} {res} ⎳𝓸𝓿𝓮❥❤️━━╬٨ﮩSanju٨ـﮩـ Love❥.mkv\n\n<pre><code>🔖 Batch Name: {b_name}</code></pre>\n\n📥 Extracted By : {CR}**'
+                cc1 = f'**📁 FILE ID: {str(count).zfill(3)}.\n\n📄 Title: {name1} 𝄟✮͢🦋⃟≛⃝m✮⃝oni.pdf \n\n<pre><code>🔖 Batch Name: {b_name}</code></pre>\n\n📥 Extracted By : {CR}**'
                                  
                 
                 if "drive" in url:
@@ -675,7 +674,7 @@ async def rose_handler(client: Client, m: Message):
                           
                 else:
                     Show = f"❊⟱ 𝐃𝐨𝐰𝐧𝐥𝐨𝐚𝐝𝐢𝐧𝐠 ⟱❊ »\n\n📄 Title:- `{name}\n\n⌨ 𝐐𝐮𝐥𝐢𝐭𝐲 » {raw_text2}`\n\n**🔗 𝐔𝐑𝐋 »** `{url}`"
-                    prog = await m.reply_text(f"**Downloading:-**\n\n**📄 Title:-** `{name}\n\nQuality - {raw_text2}`\n\n**Link:**`{url}`\n\n**Bot Made By Rose🩷 **")
+                    prog = await m.reply_text(f"**Downloading:-**\n\n**📄 Title:-** `{name}\n\nQuality - {raw_text2}`\n\n**Link:**`{url}`\n\n**Bot Made By SanjaKagra86🩷 **")
                     res_file = await helper.download_video(url, cmd, name)
                     filename = res_file
                     await prog.delete(True)
